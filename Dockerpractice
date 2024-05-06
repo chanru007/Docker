@@ -14,3 +14,13 @@ ENV NAME World
 
 # Run a command to start the application
 CMD ["python3", "app.py"]
+
+# Use a base image, for example, Ubuntu
+FROM ubuntu:latest
+
+# Update package lists and install ping
+RUN apt-get update && apt-get install -y iputils-ping
+
+# Default command when the container starts
+CMD ["/bin/bash"]
+
